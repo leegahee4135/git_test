@@ -6,9 +6,11 @@ def solution(N,number):
     for i in range(8):
         S[i].add(int(str(N)*(i+1)))
 
+    # N이 number이랑 같은 숫자인 경우는 따로 빼서 return 1 하도록 해야함 (아래 과정으로는 찾아지지 않음)
     if N == number:
         return 1
 
+    # Dp 알고리즘 적용 (해설은 goodNote에 적음)
     for i in range(8):
         for j in range(i):
             for k in S[j]:
